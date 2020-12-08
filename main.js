@@ -55,7 +55,6 @@ function fazerRequest(){
             let qt = dados.results.length;
             let anime = dados.results[Math.floor(Math.random() * qt)];
             console.log(anime);
-            console.log(dados.results)
 
             //mostra o anime
             document.querySelector("#resultado_h1").hidden = false;
