@@ -5,7 +5,6 @@ botao.addEventListener("click", fazerRequest);
 function fazerRequest(){
     //criar um request (como no exemplo da documentação da api)
     let request = new XMLHttpRequest();
-    console.log("criei")
     
     let argumentos = "";
     //concatenar os valores na string de arumentos que vai ser passada para o request
