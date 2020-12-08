@@ -1,6 +1,8 @@
 var botao = document.querySelector("#procurar");
 botao.addEventListener("click", fazerRequest);
 
+var order = ["title", "start_date", "end_date", "score", "type", "members", "id", "rating"];
+
 //usei a api jikan: https://jikan.moe/ para pegar dados sobre animes de acordo com os inputs do user
 function fazerRequest(){
     //criar um request (como no exemplo da documentação da api)
@@ -12,6 +14,7 @@ function fazerRequest(){
     let type = document.querySelector("#type").value;
     let status = document.querySelector("input[name='status']:checked").value;
     let rated = document.querySelector("#rated").value;
+    let order_by = order[Math.floor(Math.random() * order.length)]
     
     if (genre == ""){
         alert("Um gênero deve ser escolhido para que um anime possa ser encontrado!");
@@ -27,11 +30,12 @@ function fazerRequest(){
     if (rated != ""){
         argumentos = argumentos.concat(`&rated=${rated}`);
     }
+    argumentos = argumentos.concat(`&order_by=${order_by}`);
     //tem algum jeito mais eficiente de fazer isso, sem fazer tanto hardcode? tem muitos ifs
     
     //fazer o request (como no exemplo da documentação da api)
     request.open('GET', `https://api.jikan.moe/v3/search/anime?${argumentos}&page=1`);
-    console.log(`https://api.jikan.moe/v3/search/anime?${argumentos}&page=1&limit=10`);
+    console.log(`https://api.jikan.moe/v3/search/anime?${argumentos}&page=1`);
 
     request.onreadystatechange = function () {
         if (this.readyState === 4) {
@@ -65,7 +69,7 @@ function fazerRequest(){
             document.querySelector("#resultado_sinopse").innerHTML = anime["synopsis"];
             document.querySelector("#resultado_type").innerHTML = "Tipo: "+anime["type"];
             document.querySelector("#resultado_rated").innerHTML = "Classificação etária: "+anime["rated"];
-            document.querySelector("#resultado_score").innerHTML = "Nota no MyAnimeList: "+anime["score"];
+            document.querySelector("#resultado_score").innerHTML = "Nota no MyAnimeList: "+anime["score"]+"/10";
 
         }
     };
