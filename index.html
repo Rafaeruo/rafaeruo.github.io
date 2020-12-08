@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link href="style.css" rel="stylesheet">
-    <title>Procurar Anime</title>
+    <title>placeholder</title>
 </head>
 <body>
     <div id="container">
-        <h1>Procurar anime:</h1>
+        <h1>Procurar um anime no MyAnimeList:</h1>
         <div id="formulario">
             <span><label for="genre">Gênero:</label></span>
             <select id="genre">
@@ -67,12 +67,18 @@
         <h1 id="resultado_h1" hidden>Resultado:</h1>
         <div id="resultado" hidden>
             <img id="resultado_imagem" src="">
-            <a id="resultado_url" href=""><h1 id="resultado_titulo"></h1></a>
-            <p id="resultado_sinopse"></p>
-            <p id="resultado_type"></p>
-            <p id="resultado_rated"></p>
-            <p id="resultado_score"></p>
+            <a target="_blank" id="resultado_url" href=""><h1 id="resultado_titulo"></h1></a>
+            <uil>
+                <p id="resultado_sinopse"></p>
+                <li id="resultado_type"></li>
+                <li id="resultado_rated"></li>
+                <li id="resultado_score"></li>
+            </uil>
         </div>
+        <footer>
+            Feito por Rafael Scholz Griebler<br>
+            <a href="https://jikan.moe/" target="_blank">Jikan API</a>
+        </footer>
     </div>
     
     <script src="main.js"></script>

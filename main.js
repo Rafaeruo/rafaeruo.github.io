@@ -65,7 +65,7 @@ function fazerRequest(){
             document.querySelector("#resultado_sinopse").innerHTML = anime["synopsis"];
             document.querySelector("#resultado_type").innerHTML = "Tipo: "+anime["type"];
             document.querySelector("#resultado_rated").innerHTML = "Classificação etária: "+anime["rated"];
-            document.querySelector("#resultado_score").innerHTML = "Nota (MyAnimeList): "+anime["score"];
+            document.querySelector("#resultado_score").innerHTML = "Nota no MyAnimeList: "+anime["score"];
 
         }
     };
